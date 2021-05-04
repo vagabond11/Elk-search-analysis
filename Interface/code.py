@@ -33,7 +33,7 @@ def search():
                                         }
                                         }
       
-        result = es.search(index="quran1", body=query_body)
+        result = es.search(index="quran2_g2", body=query_body)
         return render_template('search.html',result=result)
         
 
