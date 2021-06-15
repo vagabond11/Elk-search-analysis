@@ -1,3 +1,4 @@
+Test commit
 Installation de l'environnement :
 
 Ouvir un CMD et executé la commande conda env create -f env.yml en spécifiant le chemin du fichier env.yml
