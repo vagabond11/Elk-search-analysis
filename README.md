@@ -1,6 +1,6 @@
 # Elk-search-analysis
 
-**Installation de l'environnement :
+**Installation de l'environnement :**
 
 Ouvir un CMD et executé la commande conda env create -f env.yml en spécifiant le chemin du fichier env.yml
 
@@ -15,7 +15,7 @@ Import des données, création de l'index et lancement des requêtes
 6- Changer le nom du serveur SQL Server et mettez le votre
 7- Exécuter toutes les cellules du notebook
 
-**Interface graphique :
+**Interface graphique :**
 
 1- Ouvrir éditeur de code python (Pycharm, Spyder, etc ...)
 2- Importer le dossier "Interface" comme projet
