@@ -64,7 +64,7 @@ body {
 
 #banner-bkgrd {
 	/* 	A photo by Drew Coffman, available at https://unsplash.com/photos/D1Pa78SnrH0 */
-	background-image: url("img/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg");
+	background-image: url("img/quran_wallpaper.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -161,13 +161,13 @@ body {
 	background-color: #91520b;
 	font-family: FontAwesome;
 	font-weight: bold;
-	color: #7F7F7F;
+	color: #d8d1d1;
 }
 
 #search-btn:focus,
 #search-btn:hover {
 	background-color: #91520b;
-	color: #fff;
+	color: rgb(29, 28, 28);
 }
 
 #search-input:focus,

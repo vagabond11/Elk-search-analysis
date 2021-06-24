@@ -22,15 +22,28 @@
                     <div id="search-heading">
                         <h1>Quran Verse & Hadith Search Engine</h1>
                     </div>
-                    <form id="search-form" class="flex-inline" method="POST">
+                    <form id="search-form" class="flex-inline" action="" method="POST">
+
                         <input id="search-input" type="text" autocomplete="off" tabindex="1" autocapitalize="off"
                             autocorrect="off" name="search-query" placeholder="please enter a verse" />
+
                         <input id="search-clear" type="button" tabindex="3" value="×">
-                        <input id="search-btn" type="submit" tabindex="2" class="fa fa-wikipedia-w fa-lg" value="search Quran"
-                            title="Search" />
-                        <input id="search-btn" type="submit" tabindex="2" class="fa fa-wikipedia-w fa-lg" value="Search Hadith"
-                            title="Search Hadith" />    
-                        
+
+                        <input id="search-btn" type="submit" tabindex="2" class="fa fa-wikipedia-w fa-lg" name = "action" value="search quran"
+                            title="Search Quran" />
+
+                        <input id="search-btn" type="submit" tabindex="3" class="fa fa-wikipedia-w fa-lg" name = "action" value="search hadith"
+                            title="Search Hadith" />
+                    
+                    <!--
+                    <form id="package_form" action="" method="post">
+                        <input id="search-input" type="text" autocomplete="off" tabindex="1" autocapitalize="off"
+                            autocorrect="off" name="search-query" placeholder="please enter a verse" />
+                        <button type="submit" name="action" value="search_quran">Quran</button>
+                        <button type="submit" name="action" value="search_hadith">Hadith</button>
+                  
+                   </form>
+                -->   
                    
                     </form>
                 </header>

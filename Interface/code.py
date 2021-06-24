@@ -1,4 +1,5 @@
-from flask import Flask , render_template , url_for , request
+from flask import Flask , render_template , url_for , request, redirect, Markup
+
 import json
 import codecs
 import pyodbc 
@@ -10,9 +11,9 @@ import requests
 es = Elasticsearch([{'host': 'localhost', 'port': '9200'}])
 
 
-
 app = Flask(__name__ , template_folder = 'templates')
-@app.route("/")
+
+@app.route('/')
 def index():
     return render_template('index.html')
 
@@ -21,21 +22,35 @@ def index():
 @app.route("/" , methods=["GET","POST"])
 def search():
     if request.method == "POST" :
-        ayah = request.form["search-query"]
-        query_body = {
+        search_input = request.form["search-query"]
+        if request.form['action'] == 'search quran':
+            query_body = {
                         "size":1000,
                         "query": {
                         "match": {
                         "aya_no_chakl": {
-                        "query":ayah
-                                        }
-                                        }
-                                        }
-                                        }
-      
-        result = es.search(index="quran2_g2", body=query_body)
-        return render_template('search.html',result=result)
-        
+                        "query":search_input
+                        }
+                        }
+                        }
+            }
+            result = es.search(index="quran_final_mapping", body=query_body)
+            return render_template('search.html',result=result)
+
+        if request.form['action'] == 'search hadith':
+            query_body = {
+                        "size":1000,
+                        "query": {
+                        "match": {
+                        "hadith": {
+                        "query":search_input
+                        }
+                        }
+                        }
+                            }
+            result = es.search(index="hadith", body=query_body)
+            return render_template('search_hadith.html',result=result)
+
 
 
 if __name__ == "__main__":
