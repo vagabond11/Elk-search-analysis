@@ -6,7 +6,7 @@ import pyodbc
 from tqdm.notebook import tqdm
 from elasticsearch import Elasticsearch
 import requests
-
+set
 
 es = Elasticsearch([{'host': 'localhost', 'port': '9200'}])
 
@@ -28,7 +28,7 @@ def search():
                         "size":1000,
                         "query": {
                         "match": {
-                        "aya_no_chakl": {
+                        "aya_no_chakl.shingle_nostem": {
                         "query":search_input
                         }
                         }
@@ -42,13 +42,13 @@ def search():
                         "size":1000,
                         "query": {
                         "match": {
-                        "hadith": {
+                        "hadith_arabic.shingle_nostem": {
                         "query":search_input
                         }
                         }
                         }
                             }
-            result = es.search(index="hadith", body=query_body)
+            result = es.search(index="hadith_with_mapping", body=query_body)
             return render_template('search_hadith.html',result=result)
 
 
